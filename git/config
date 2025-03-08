@@ -1,0 +1,64 @@
+[user]
+	email = jesus.carpintero@gmail.com
+	name = Jesús Carpintero
+	signingkey = AE0E20EDF8EE43CEADCF9A3B632F8E18E5B997F2
+
+#[url "git@github.com:"]
+#    insteadOf = https://github.com/
+[url "git@github.mpi-internal.com:"]
+	insteadOf = https://github.mpi-internal.com/
+
+[alias]
+co = checkout
+ci = commit
+st = status
+br = branch
+h = log --pretty=format:\"%Cgreen%h %ad%Creset %s%Cgreen%d%Creset [%an]\" --graph --date=format:'%y-%m-%d %H%M'
+ha = log --pretty=format:\"%Cgreen%h %ad%Creset %s%Cgreen%d%Creset [%an]\" --graph --date=format:'%y-%m-%d %H%M' --all
+lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	amend = commit --amend --no-edit
+[color]
+ui=always
+
+[diff "sopsdiffer"]
+	textconv = sops -d
+[commit]
+	gpgsign = false
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+
+[core]
+    pager = delta
+    excludesFile = ~/.gitignore
+
+[delta]
+    features = line-numbers decorations # side-by-side
+    syntax-theme = Dracula
+    plus-style = syntax "#003800"
+    minus-style = syntax "#3f0001"
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-decoration-style = cyan box ul
+
+[delta "line-numbers"]
+    line-numbers-left-style = cyan
+    line-numbers-right-style = cyan
+    line-numbers-minus-style = 124
+    line-numbers-plus-style = 28
+
+[interactive]
+    diffFilter = delta --color-only
+
+[pull]
+	ff = only
+[init]
+	defaultBranch = master
+[push]
+	autoSetupRemote = true
