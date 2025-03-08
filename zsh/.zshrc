@@ -105,3 +105,6 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
+eval "$(zoxide init --cmd cd zsh)"
+

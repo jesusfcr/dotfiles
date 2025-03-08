@@ -14,6 +14,9 @@ fi
 # Install starship
 sh -c "$(curl -sS https://starship.rs/install.sh)" "" -f
 
+# Install zoxide
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+
 ZSH_PLUGINS="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins"
 echo $ZSH_PLUGINS
 if [ ! -d "${ZSH_PLUGINS}/zsh-autosuggestions" ]; then
