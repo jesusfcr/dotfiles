@@ -10,3 +10,7 @@ curl -L https://github.com/dandavison/delta/releases/download/0.18.2/delta-0.18.
 if [ ! -d /home/jesus/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
+
+# Install starship
+sh -c "$(curl -sS https://starship.rs/install.sh)" "" -f
+

@@ -1,0 +1,18 @@
+[golang]
+disabled = false
+
+[kubernetes]
+symbol = "⛵ "
+style = "bold blue"
+disabled = true
+
+[docker_context]
+symbol = "🐋 "
+disabled = false
+
+[gcloud]
+disabled = true
+
+[container]
+disabled = true
+
