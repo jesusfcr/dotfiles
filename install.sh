@@ -2,7 +2,7 @@
 
 sudo apt update
 
-sudo apt upgrade git htop tree fzf
+sudo apt upgrade -y git htop tree fzf zsh-autosuggestions zsh-syntax-highlighting
 
 curl -L https://github.com/dandavison/delta/releases/download/0.18.2/delta-0.18.2-x86_64-unknown-linux-gnu.tar.gz -s | sudo tar xzvf - --strip 1 -C /usr/local/bin --wildcards "*/delta"
 
@@ -13,4 +13,14 @@ fi
 
 # Install starship
 sh -c "$(curl -sS https://starship.rs/install.sh)" "" -f
+
+ZSH_PLUGINS="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins"
+echo $ZSH_PLUGINS
+if [ ! -d "${ZSH_PLUGINS}/zsh-autosuggestions" ]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_PLUGINS}/zsh-autosuggestions"
+fi
+
+if [ ! -d "${ZSH_PLUGINS}/zsh-syntax-highlighting" ]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_PLUGINS}/zsh-syntax-highlighting"
+fi
 
