@@ -108,3 +108,5 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 eval "$(zoxide init --cmd cd zsh)"
 
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
